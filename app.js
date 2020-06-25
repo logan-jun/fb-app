@@ -93,7 +93,7 @@ const j = schedule.scheduleJob('*/5 * * * * *', function(){
   console.log(logdata);
   data += JSON.stringify(logdata) + '\n';
   if (count == 12) {
-    fs.writeFileSync(logdata.podName + '_' + moment(date).format('YYYY-MM-DD HH:mm:ss') +'.log', data);
+    fs.writeFileSync('/home/ubuntu/logs/'+ logdata.podName + '_' + moment(date).format('YYYY-MM-DD HH:mm:ss') +'.log', data);
     data = '';
     count = 0;
   }
